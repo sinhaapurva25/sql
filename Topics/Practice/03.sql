@@ -38,10 +38,10 @@ FROM (
         activity_date,
         activity_type,
         amount,
-        ROW_NUMBER() OVER (PARTITION BY user_id ORDER BY activity_date DESC) AS rn
+        ROW_NUMBER() OVER (PARTITION BY user_id ORDER BY activity_date DESC) AS rnk
     FROM user_activity
 ) AS ranked_data
-WHERE rn = 1;
+WHERE rnk = 1;
 
 -- Result:
 -- user_id | activity_date | activity_type | amount

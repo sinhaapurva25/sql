@@ -199,3 +199,23 @@ SELECT a AS new_a FROM t
 
 PySpark:
 df.withColumnRenamed("a", "new_a")
+
+Conceptual Differences (Very Important for Interviews)
+| SQL                                   | Spark DataFrame                   |
+| ------------------------------------- | --------------------------------- |
+| Query is a string                     | Code builds a logical plan        |
+| Runs immediately                      | Lazy until action                 |
+| Tables                                | DataFrames / Datasets             |
+| Optimizer is hidden                   | You still control transformations |
+| Temporary results via subqueries/CTEs | Temporary results via variables   |
+
+
+Actions vs Transformations (Spark-only concept)
+SQL:
+SELECT * FROM t;
+
+PySpark:
+df.select(...).filter(...)   # transformation (lazy)
+df.show()                    # action (executes)
+df.count()                   # action
+df.write(...)                # action

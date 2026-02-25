@@ -1,3 +1,12 @@
+| SQL                    | PySpark DataFrame                             |
+| ---------------------- | --------------------------------------------- |
+| Declarative            | API / Functional                              |
+| One query string       | Method chaining                               |
+| Order matters less     | Order of calls matters                        |
+| Optimizer decides plan | Optimizer still exists, but you express steps |
+| Tables                 | DataFrames                                    |
+| Columns as names       | Columns as objects or strings                 |
+
 🌈 𝐒𝐄𝐋𝐄𝐂𝐓
 SQL:
  SELECT column(s) FROM table

@@ -21,13 +21,13 @@ PySpark:
 🌈 𝐖𝐇𝐄𝐑𝐄
 SQL:
  SELECT column(s) FROM table WHERE condition
- SELECT \* FROM t WHERE a > 10 AND b = 'x'
+ SELECT * FROM t WHERE a > 10 AND b = 'x'
 
 PySpark:
  df.filter(condition).select("column(s)")
- df.filter((df.a > 10) \& (df.b == "x"))
+ df.filter((df.a > 10) & (df.b == "x"))
  # or
- df.where((col("a") > 10) \& (col("b") == "x"))
+ df.where((col("a") > 10) & (col("b") == "x"))
 
 
 🌈 𝐎𝐑𝐃𝐄𝐑 𝐁𝐘/SORT
@@ -44,7 +44,7 @@ PySpark:
 🌈 𝐋𝐈𝐌𝐈𝐓
 SQL:
  SELECT column(s) FROM table LIMIT n
- SELECT \* FROM t LIMIT 10
+ SELECT * FROM t LIMIT 10
 
 PySpark:
  df.limit(n).select("column(s)")
@@ -190,12 +190,12 @@ SQL:
 -- not standard SQL, but conceptually
 
 PySpark:
-df.drop("column\_name")
+df.drop("column_name")
 
 🌈 RENAME COLUMN
 
 SQL:
-SELECT a AS new\_a FROM t
+SELECT a AS new_a FROM t
 
 PySpark:
-df.withColumnRenamed("a", "new\_a")
+df.withColumnRenamed("a", "new_a")
